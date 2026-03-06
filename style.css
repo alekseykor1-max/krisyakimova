@@ -4,7 +4,9 @@
    Updated: 2026-03-07
    ======================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+/* Fonts loaded via <link> in HTML to avoid server MIME-type issues */
+
 
 /* ── TOKENS ─────────────────────────── */
 :root {
