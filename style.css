@@ -7,17 +7,30 @@
 
 /* ── TOKENS ─────────────────────────── */
 :root {
-    --void-black: #0A0A0F;
-    --dark-slate: #141418;
-    --surface: #1C1C22;
-    --steel-grey: #3D3D4A;
-    --warm-grey: #8B8B98;
-    --off-white: #F0EDE8;
-    --neon-cream: #F5F0E8;
-    --coral: #FF3B3B;
-    --orange: #FF6B2B;
-    --grad-accent: linear-gradient(135deg, #FF3B3B 0%, #FF6B2B 100%);
-    --grad-hero: radial-gradient(ellipse at top right, #2A0808 0%, #0A0A0F 65%);
+    /* ── Фиолетовая палитра ── */
+    --void-black: #080710;
+    /* почти чёрный с фиолетовым */
+    --dark-slate: #0F0D1C;
+    /* тёмно-фиолетовый фон */
+    --surface: #181529;
+    /* поверхности карточек */
+    --steel-grey: #342E52;
+    /* тёмные границы */
+    --warm-grey: #9E97BB;
+    /* приглушённый текст */
+    --off-white: #F2F0FF;
+    /* холодный белый с фиолетовым */
+    --neon-cream: #F5F3FF;
+
+    /* Акценты: фиолет + лаванда */
+    --coral: #9B5CF6;
+    /* основной — насыщенный фиолет */
+    --orange: #C084FC;
+    /* вторичный — светлая лаванда */
+
+    --grad-accent: linear-gradient(135deg, #9B5CF6 0%, #C084FC 100%);
+    --grad-hero: radial-gradient(ellipse at top right, #2D1060 0%, #080710 65%);
+    --grad-gold: linear-gradient(135deg, #C084FC 0%, #E879F9 100%);
 
     --font-display: 'Bebas Neue', sans-serif;
     --font-head: 'Barlow Condensed', sans-serif;
@@ -35,6 +48,7 @@
     --container-max: 1280px;
     --container-pad: clamp(16px, 5vw, 80px);
     --section-py: clamp(64px, 10vw, 160px);
+    --block-gap: clamp(32px, 5vw, 80px);
     --radius-md: 12px;
     --radius-lg: 24px;
     --radius-pill: 100px;
