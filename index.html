@@ -172,8 +172,7 @@
                     <div class="sr-stat-lbl">брендов и клиентов</div>
                 </div>
                 <div class="sr-badge-float">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9B5CF6"
-                        stroke-width="1.5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9B5CF6" stroke-width="1.5">
                         <path stroke-linecap="round"
                             d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
                     </svg>
@@ -576,12 +575,28 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
         reveals.forEach(el => observer.observe(el));
+
+        // Сразу показываем элементы которые уже в viewport при загрузке
+        setTimeout(() => {
+            reveals.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        }, 100);
+
+        // Фолбек: если через 2с элементы всё ещё не видны — показываем все
+        setTimeout(() => {
+            reveals.forEach(el => el.classList.add('visible'));
+        }, 2000);
+
 
         // ── HERO PARALLAX ─────────────────────
         const heroPhoto = document.getElementById('hero-photo');
